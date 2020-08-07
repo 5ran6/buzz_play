@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1079836010073",
+    "firebase_url": "https://buzz-play.firebaseio.com",
+    "project_id": "buzz-play",
+    "storage_bucket": "buzz-play.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079836010073:android:6da4bc2c8d3af3d86ab348",
+        "android_client_info": {
+          "package_name": "com.gamint.buzz_play"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079836010073-0mk4l1kr9fu8q0lc858cgfsrpllmdbsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa0ZiVfhqzUeuPTESiwoNHXEM-5PCkePE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079836010073-0mk4l1kr9fu8q0lc858cgfsrpllmdbsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

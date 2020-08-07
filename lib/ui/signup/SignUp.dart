@@ -263,185 +263,190 @@ class _SignupState extends State<Signup> {
       resizeToAvoidBottomInset: false,
       body: Builder(
         builder: (BuildContext context) {
-          return Container(
-            height: double.infinity,
-            color: Color(0xffF6F6F6),
-            child: Column(
-              children: <Widget>[
-                Container(
-                  height: 30,
-                  width: double.infinity,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Image.asset(
-                    "assets/image/banner.png",
-                    width: double.infinity,
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Container(
-                    child: TextField(
-                      controller: nameController,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        hintText: 'Full Name',
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0,0,0,8.0),
+              child: Container(
+                 color: Color(0xffF6F6F6),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      height: 30,
+                      width: double.infinity,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Image.asset(
+                        "assets/image/banner.png",
+                        width: double.infinity,
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2.5),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Container(
-                    child: TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
+                    SizedBox(
+                      height: _appConfig.rH(2),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Container(
+                        child: TextField(
+                          controller: nameController,
+                        textCapitalization: TextCapitalization.words,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            hintText: 'Full Name',
+                          ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        hintText: 'Email',
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2.5),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Container(
-                    child: TextField(
-                      obscureText: true,
-                      controller: passController,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
+                    SizedBox(
+                      height: _appConfig.rH(2.5),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Container(
+                        child: TextField(
+                          controller: emailController,
+                   keyboardType: TextInputType.emailAddress,       decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            hintText: 'Email',
+                          ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                              color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        hintText: 'Password',
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(1),
-                ),
-                GestureDetector(
-                  onTap: () => _validateInputs(),
-                  child: Container(
-                    child: Image.asset("assets/image/sign_up_btn.png"),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    "or signup with",
-                    style: TextStyle(color: Colors.grey, fontSize: 17),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(1),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: (){
+                    SizedBox(
+                      height: _appConfig.rH(2.5),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Container(
+                        child: TextField(
+                          obscureText: true,
+                          controller: passController,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                  color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            hintText: 'Password',
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(1),
+                    ),
+                    GestureDetector(
+                      onTap: () => _validateInputs(),
+                      child: Container(
+                        child: Image.asset("assets/image/sign_up_btn.png"),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(2),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        "or signup with",
+                        style: TextStyle(color: Colors.grey, fontSize: 17),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(1),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: (){
 
-                          signIn(context);
-                        },
-                        child: Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 25, 0),
-                            child: Image.asset(
-                              "assets/image/ic_fb.png",
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.fill,
-                            )),
-                      ),
-                      Container(
-                        width: 1,
-                        height: 55,
-                        color: Colors.black,
-                      ),
-                      GestureDetector(
-                        onTap: (){
+                              signIn(context);
+                            },
+                            child: Container(
+                                margin: EdgeInsets.fromLTRB(0, 0, 25, 0),
+                                child: Image.asset(
+                                  "assets/image/ic_fb.png",
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fill,
+                                )),
+                          ),
+                          Container(
+                            width: 1,
+                            height: 55,
+                            color: Colors.black,
+                          ),
+                          GestureDetector(
+                            onTap: (){
 
-                          signInWithGoogle(context);
-                        },
-                        child: Container(
-                            margin: EdgeInsets.fromLTRB(25, 0, 0, 0),
-                            child: Image.asset(
-                              "assets/image/ic_google.png",
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.fill,
-                            )),
+                              signInWithGoogle(context);
+                            },
+                            child: Container(
+                                margin: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                                child: Image.asset(
+                                  "assets/image/ic_google.png",
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fill,
+                                )),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(7),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                    context,
-                    new MaterialPageRoute(
-                      builder: (context) => new Login(),
                     ),
-                  ),
-                  child: Container(
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "You have already account?",
-                          style: TextStyle(fontSize: 17),
-                          textAlign: TextAlign.center,
-                        ),
-                        Text(
-                          " Login in",
-                          style: TextStyle(
-                              color: Color(0xff8E55C8), fontSize: 17),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                    SizedBox(
+                      height: _appConfig.rH(7),
                     ),
-                  ),
+                    GestureDetector(
+                      onTap: () => Navigator.pushReplacement(
+                        context,
+                        new MaterialPageRoute(
+                          builder: (context) => new Login(),
+                        ),
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "You have already account?",
+                              style: TextStyle(fontSize: 17),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              " Login",
+                              style: TextStyle(
+                                  color: Color(0xff8E55C8), fontSize: 17),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           );
         },

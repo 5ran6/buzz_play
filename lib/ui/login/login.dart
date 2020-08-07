@@ -294,174 +294,178 @@ String _base64;
       resizeToAvoidBottomInset: false,
       body: Builder(
         builder: (BuildContext context) {
-          return Container(
-            height: MediaQuery.of(context).size.height,
-            color: Color(0xffF6F6F6),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  height: 30,
-                  width: double.infinity,
-                  color: Colors.blue,
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Image.asset(
-                    "assets/image/banner.png",
-                    width: double.infinity,
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(3),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Container(
-                    child: TextField(
-                      controller: emailController,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        hintText: 'Email',
+          return SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0,0,0,8.0),
+              child: Container(
+                color: Color(0xffF6F6F6),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Container(
+                      height: 30,
+                      width: double.infinity,
+                      color: Colors.blue,
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Image.asset(
+                        "assets/image/banner.png",
+                        width: double.infinity,
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2.5),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Container(
-                    child: TextField(
-                      controller: passController,
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Color(0xff8E55C8), width: 1.0),
+                    SizedBox(
+                      height: _appConfig.rH(3),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Container(
+                        child: TextField(
+                          controller: emailController,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            hintText: 'Email',
+                          ),
                         ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Color(0xff8E55C8), width: 1.0),
-                        ),
-                        hintText: 'Password',
                       ),
                     ),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(1),
-                ),
-                Container(
-                  margin: const EdgeInsets.fromLTRB(0, 5, 20, 0),
-                  alignment: Alignment.topRight,
-                  child: Text(
-                    "Forgot Password?",
-                    style: TextStyle(color: Color(0xff8E55C8), fontSize: 17),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(4),
-                ),
-                GestureDetector(
-                  onTap: () => _validateInputs(),
-                  child: Container(
-                    child: Image.asset("assets/image/log_in_btn.png"),
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(4),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Text(
-                    "or login with",
-                    style: TextStyle(color: Colors.grey, fontSize: 17),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(2),
-                ),
-                Container(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      GestureDetector(
-                        onTap: () {
-                          signIn(context);
-                        },
-                        child: Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 25, 0),
-                            child: Image.asset(
-                              "assets/image/ic_fb.png",
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.fill,
-                            )),
-                      ),
-                      Container(
-                        width: 1,
-                        height: 55,
-                        color: Colors.black,
-                      ),
-                      GestureDetector(
-                        onTap: () {
-                          signInWithGoogle(context);
-                        },
-                        child: Container(
-                            margin: EdgeInsets.fromLTRB(25, 0, 0, 0),
-                            child: Image.asset(
-                              "assets/image/ic_google.png",
-                              width: 50,
-                              height: 50,
-                              fit: BoxFit.fill,
-                            )),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: _appConfig.rH(9),
-                ),
-                GestureDetector(
-                  onTap: () => Navigator.pushReplacement(
-                    context,
-                    new MaterialPageRoute(
-                      builder: (context) => new Signup(),
+                    SizedBox(
+                      height: _appConfig.rH(2.5),
                     ),
-                  ),
-                  child: Container(
-                    width: double.infinity,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Text(
-                          "Dont have an account yet? ",
-                          style: TextStyle(fontSize: 17),
-                          textAlign: TextAlign.center,
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      child: Container(
+                        child: TextField(
+                          controller: passController,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                            focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Color(0xff8E55C8), width: 1.0),
+                            ),
+                            hintText: 'Password',
+                          ),
                         ),
-                        Text(
-                          " Sign up",
-                          style:
-                              TextStyle(color: Color(0xff8E55C8), fontSize: 17),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: _appConfig.rH(1),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.fromLTRB(0, 5, 20, 0),
+                      alignment: Alignment.topRight,
+                      child: Text(
+                        "Forgot Password?",
+                        style: TextStyle(color: Color(0xff8E55C8), fontSize: 17),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(4),
+                    ),
+                    GestureDetector(
+                      onTap: () => _validateInputs(),
+                      child: Container(
+                        child: Image.asset("assets/image/log_in_btn.png"),
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(4),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Text(
+                        "or login with",
+                        style: TextStyle(color: Colors.grey, fontSize: 17),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(2),
+                    ),
+                    Container(
+                      width: double.infinity,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () {
+                              signIn(context);
+                            },
+                            child: Container(
+                                margin: EdgeInsets.fromLTRB(0, 0, 25, 0),
+                                child: Image.asset(
+                                  "assets/image/ic_fb.png",
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fill,
+                                )),
+                          ),
+                          Container(
+                            width: 1,
+                            height: 55,
+                            color: Colors.black,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              signInWithGoogle(context);
+                            },
+                            child: Container(
+                                margin: EdgeInsets.fromLTRB(25, 0, 0, 0),
+                                child: Image.asset(
+                                  "assets/image/ic_google.png",
+                                  width: 50,
+                                  height: 50,
+                                  fit: BoxFit.fill,
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: _appConfig.rH(9),
+                    ),
+                    GestureDetector(
+                      onTap: () => Navigator.pushReplacement(
+                        context,
+                        new MaterialPageRoute(
+                          builder: (context) => new Signup(),
+                        ),
+                      ),
+                      child: Container(
+                        width: double.infinity,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              "Dont have an account yet? ",
+                              style: TextStyle(fontSize: 17),
+                              textAlign: TextAlign.center,
+                            ),
+                            Text(
+                              " Sign up",
+                              style:
+                                  TextStyle(color: Color(0xff8E55C8), fontSize: 17),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
+              ),
             ),
           );
         },
